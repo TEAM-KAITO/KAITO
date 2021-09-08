@@ -1112,7 +1112,7 @@ end
 if text =='تغيير المطور الاساسي ⊀' and not SudoBot(msg) then
 send(msg.chat_id_, msg.id_,'*⊀│لا يمكنك تغيير المطور الاساسي*')
 end
-if text == 'تحديث السورس ︙' and Devmode(msg) then 
+if text == 'تحديث السورس ⊀' and DevKAITOW(msg) then 
 os.execute('rm -rf KAITO.lua')
 os.execute('wget https://raw.githubusercontent.com/TEAM-KAITO/KAITO/main/KAITO.lua')
 send(msg.chat_id_, msg.id_,' ︙تم تحديث السورس \n ︙لديك اخر اصدار لسورس كايتو\n ︙الاصدار » { v 1.3 }')
@@ -4019,7 +4019,7 @@ end
 send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
-if Devmode(msg) then
+if DevKAITOW(msg) then
 local Get_Files, res = https.request("https://raw.githubusercontent.com/TEAM-KAITO/Files_KAITO/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
@@ -4047,7 +4047,7 @@ end
 return false
 end
 end
-if text and text:match("^(تعطيل) (.*)(.lua)$") and Devmode(msg) then
+if text and text:match("^(تعطيل) (.*)(.lua)$") and DevKAITOW(msg) then
 local name_t = {string.match(text, "^(تعطيل) (.*)(.lua)$")}
 local file = name_t[2]..'.lua'
 local file_bot = io.open("File_Bot/"..file,"r")
@@ -4067,7 +4067,7 @@ send(msg.chat_id_, msg.id_," ︙عذرا الملف لايدعم سورس كاي
 end
 return false
 end
-if text and text:match("^(تفعيل) (.*)(.lua)$") and Devmode(msg) then
+if text and text:match("^(تفعيل) (.*)(.lua)$") and DevKAITOW(msg) then
 local name_t = {string.match(text, "^(تفعيل) (.*)(.lua)$")}
 local file = name_t[2]..'.lua'
 local file_bot = io.open("File_Bot/"..file,"r")
@@ -4089,7 +4089,7 @@ send(msg.chat_id_, msg.id_," ︙عذرا الملف لايدعم سورس كاي
 end
 return false
 end
-if text == "مسح الملفات" and Devmode(msg) then
+if text == "مسح الملفات" and DevKAITOW(msg) then
 os.execute("rm -fr File_Bot/*")
 send(msg.chat_id_,msg.id_," ︙تم مسح الملفات")
 return false
