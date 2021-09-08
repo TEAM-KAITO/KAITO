@@ -2155,7 +2155,7 @@ database:sadd(bot_id..'Muted:User'..msg.chat_id_,msg.sender_user_id_)
 DeleteMessage(msg.chat_id_,{[0] = msg.id_}) 
 end
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if BasicConstructor(msg) then 
 if (msg.content_.ID == "MessagePhoto" or msg.content_.ID == "MessageSticker" or msg.content_.ID == "MessageVideo" or msg.content_.ID == "MessageAnimation" or msg.content_.ID == "MessageUnsupported") and database:get(bot_id.."LoMsg"..msg.chat_id_) then
 database:sadd(bot_id..":IdMsg:"..msg.chat_id_,msg.id_)
@@ -2174,7 +2174,7 @@ database:srem(bot_id..":IdMsg:"..msg.chat_id_,v)
 end
 end
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if msg.content_.ID == 'MessageSticker' and not Manager(msg) then 
 local filter = database:smembers(bot_id.."filtersteckr"..msg.chat_id_)
 for k,v in pairs(filter) do
@@ -3656,7 +3656,7 @@ elseif text == 'فتح التكرار' and Mod(msg) then
 database:hdel(bot_id.."flooding:settings:"..msg.chat_id_ ,"flood")  
 send(msg.chat_id_, msg.id_,' *⊀│تم فتح التكرار*')
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == 'تحديث' and DevKAITOW(msg) then
 dofile('KAITO.lua')  
 send(msg.chat_id_, msg.id_, ' *⊀│تم تحديث جميع الملفات*') 
@@ -3956,7 +3956,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == ("مسح المطورين") and DevKAITOW(msg) then
 database:del(bot_id..'Sudo:User')
 send(msg.chat_id_, msg.id_, "\n *⊀│تم مسح قائمة المطورين*  ")
@@ -4422,7 +4422,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == ("مسح الاساسين") and SudoBotCoSu(msg) then
 database:del(bot_id..'Basic:Constructor'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '\n *⊀│تم مسح المنشئين الاساسين*')
@@ -4694,7 +4694,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == 'مسح المنشئين' and BasicConstructor(msg) then
 database:del(bot_id..'Constructor'..msg.chat_id_)
 texts = ' *⊀│تم مسح المنشئين* '
@@ -4799,7 +4799,7 @@ send(msg.chat_id_, msg.id_, texts)
 end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil)
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text and text:match("^رفع منشئ (%d+)$") and BasicConstructor(msg) then
 local userid = text:match("^رفع منشئ (%d+)$")
 if AddChannel(msg.sender_user_id_) == false then
@@ -4892,7 +4892,7 @@ status  = '\n*⊀│تم تنزيله من المنشئين*'
 send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == 'مسح المدراء' and Constructor(msg) then
 database:del(bot_id..'Manager'..msg.chat_id_)
 texts = ' *⊀│تم مسح المدراء* '
@@ -5075,7 +5075,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+-
 if text ==("رفع الادمنيه") and Manager(msg) then
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(arg,data) 
 local num2 = 0
@@ -5525,8 +5525,8 @@ end,nil)
 end
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
------------------------------------------------------------------------- زلــزال الهيــبـه
+
+
 if text == 'مسح المميزين' and Mod(msg) then
 database:del(bot_id..'Special:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *⊀│تم مسح المميزين*')
@@ -5721,7 +5721,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end  
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == 'تنزيل المطايه' and Mod(msg) then
 database:del(bot_id..'Mote:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *⊀│تم مسح جميع المطايه*')
@@ -5859,7 +5859,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 
 if text == ("تاك للحات") and Mod(msg) then
 local list = database:smembers(bot_id..'Modde:User'..msg.chat_id_)
@@ -5877,7 +5877,7 @@ t = " *⊀│مع الاسف لا يوجد حات*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == ("رفع الحات") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -5925,7 +5925,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == 'تنزيل الصخوله' and Mod(msg) then
 database:del(bot_id..'Sakl:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *⊀│تم تنزيل جميع صخوله من الكروب*')
@@ -5995,7 +5995,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == 'تنزيل الجلاب' and Mod(msg) then
 database:del(bot_id..'Motte:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *⊀│تم تنزيل جميع جلاب الكروب*')
@@ -6064,7 +6064,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == 'تنزيل القروده' and Mod(msg) then
 database:del(bot_id..'Motee:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *⊀│تم تنزيل جميع القروده بالكروب*')
@@ -6085,7 +6085,7 @@ t = " *⊀│لا يوجد قرد*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == ("رفع قرد") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -6133,7 +6133,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == 'تنزيل الحصونه' and Mod(msg) then
 database:del(bot_id..'Hors:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *⊀│تم تنزيل جميع الحصونه بالكروب*')
@@ -6154,7 +6154,7 @@ t = " *⊀│لا يوجد حصان*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == ("رفع حصان") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -6202,7 +6202,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == 'تنزيل البقرات' and Mod(msg) then
 database:del(bot_id..'Bakra:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *⊀│تم تنزيل جميع البقرات بالكروب*')
@@ -6223,7 +6223,7 @@ t = " *⊀│لا يوجد البقره*"
 end
 send(msg.chat_id_, msg.id_, t)
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == ("رفع بقره") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -6271,7 +6271,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == 'تنزيل الطليان' and Mod(msg) then
 database:del(bot_id..'Tele:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *⊀│تم تنزيل جميع طليان بالكروب')
@@ -6340,7 +6340,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == 'تنزيل الزواحف' and Mod(msg) then
 database:del(bot_id..'Zahf:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *⊀│تم تنزيل جميع زواحف*')
@@ -6409,7 +6409,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == 'تنزيل جريذيه' and Mod(msg) then
 database:del(bot_id..'Jred:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *⊀│تم تنزيل جميع جريزي*')
@@ -6478,7 +6478,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == 'مسح المحظورين' and Mod(msg) then
 database:del(bot_id..'Ban:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '\n *⊀│تم مسح المحظورين*')
@@ -6730,7 +6730,7 @@ send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == 'مسح المكتومين' and Mod(msg) then
 database:del(bot_id..'Muted:User'..msg.chat_id_)
 send(msg.chat_id_, msg.id_, ' *⊀│تم مسح المكتومين*')
@@ -8086,7 +8086,7 @@ sendText(msg.chat_id_,Name,msg.id_/2097152/0.5,'md')
 end,nil)
 end
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 
 if text == "تفعيل صورتي" or text == 'تفعيل الصوره' then
 if Constructor(msg) then  
@@ -8390,7 +8390,7 @@ database:del(bot_id..'Set:TEXT_SUDO'..msg.chat_id_..':'..msg.sender_user_id_)
 send(msg.chat_id_,msg.id_,' *⊀│تم حفظ كليشة المطور*')
 return false
 end
------------------------------------------------------------------------- زلــزال الهيــبـه
+
 if text == 'تعين الايدي' and Manager(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
@@ -9431,8 +9431,8 @@ local photo = database:get(bot_id.."Add:Rd:Sudo:Photo"..text)
 local video = database:get(bot_id.."Add:Rd:Sudo:Video"..text)
 local document = database:get(bot_id.."Add:Rd:Sudo:File"..text)
 local audio = database:get(bot_id.."Add:Rd:Sudo:Audio"..text)
------------------------------------------------------------------------- زلــزال الهيــبـه
------------------------------------------------------------------------- زلــزال الهيــبـه
+
+
 if text1 then 
 send(msg.chat_id_, msg.id_,text1)
 database:sadd(bot_id..'Spam:Texting'..msg.sender_user_id_,text) 
@@ -12505,6 +12505,6 @@ end
 end
 
 
-end -- end new msg
-end -- end callback
+end
+end
 
