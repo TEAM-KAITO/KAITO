@@ -1115,12 +1115,12 @@ end
 if text == 'تحديث السورس ⊀' and DevKAITOW(msg) then 
 os.execute('rm -rf KAITO.lua')
 os.execute('wget https://raw.githubusercontent.com/TEAM-KAITO/KAITO/main/KAITO.lua')
-send(msg.chat_id_, msg.id_,' ︙تم تحديث السورس \n ︙لديك اخر اصدار لسورس كايتو\n ︙الاصدار » { v 1.3 }')
+send(msg.chat_id_, msg.id_,' ︙تم تحديث السورس \n ︙لديك اخر اصدار لسورس كايتو\n ︙الاصدار » { v 1.4 }')
 dofile('KAITO.lua')  
 end
 if text == 'الاصدار ⊀' and DevKAITOW(msg) then 
 database:del(bot_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,' *⊀│اصدار سورس كايتو* \n*⊀│الاصدار »{ 1.3v}*')
+send(msg.chat_id_, msg.id_,' *⊀│اصدار سورس كايتو* \n*⊀│الاصدار »{ 1.4v}*')
 end
 if text == 'قناه تحديثات البوت ⊀' and DevKAITOW(msg) then 
 database:del(bot_id..'Srt:Bot') 
@@ -2421,7 +2421,7 @@ return false
 end
 os.execute('rm -rf KAITO.lua')
 os.execute('wget https://raw.githubusercontent.com/TEAM-KAITO/KAITO/main/KAITO.lua')
-send(msg.chat_id_, msg.id_,' ︙تم تحديث السورس \n ︙لديك اخر اصدار لسورس كايتو\n ︙الاصدار » { v 1.3 }')
+send(msg.chat_id_, msg.id_,' ︙تم تحديث السورس \n ︙لديك اخر اصدار لسورس كايتو\n ︙الاصدار » { v 1.4 }')
 dofile('KAITO.lua')  
 end
 
