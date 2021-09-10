@@ -2801,6 +2801,23 @@ end
 send(msg.chat_id_, msg.id_,' *⊀│تم ازالة جميع الاوامر المضافه*')  
 end
 end
+if text == 'تفعيل اليوتيوب' and Mod(msg) and GetChannelMember(msg) then  
+database:del(bot_id..'searchinbot'..msg.chat_id_) 
+send(msg.chat_id_, msg.id_,' *✫︙تم تفعيل اليوتيوب*') 
+return false  
+end
+if text == 'تعطيل اليوتيوب' and Mod(msg) and GetChannelMember(msg) then  
+database:set(bot_id..'searchinbot'..msg.chat_id_,true) 
+send(msg.chat_id_, msg.id_,' *✫︙تم تعطيل اليوتيوب*') 
+return false  
+end
+if not database:get(bot_id..'searchinbot'..msg.chat_id_) then
+if text and text:match('^بحث (.*)$') then 
+local TextSearch = text:match('^بحث (.*)$') 
+local msg_id = msg.id_/2097152/0.5
+local done = json:decode(https.request("https://vvvzvv.ml/RR/searchinbot.php?token="..token.."&chat_id="..msg.chat_id_.."&from="..msg.sender_user_id_.."&msg="..msg_id.."&Text="..TextSearch.."&n=s")) 
+end
+end      
 if text == "ترتيب الاوامر" and Constructor(msg) then
  database:set(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..":ا","ايدي")
  database:sadd(bot_id.."List:Cmd:Group:New"..msg.chat_id_,"ا")
