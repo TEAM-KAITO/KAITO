@@ -7,7 +7,7 @@ URL = require('socket.url')
 sudos   = dofile("Info.lua")
 bot_id  = token:match("(%d+)")  
 SUDO = SUDO
-sudo_users = {SUDO,1920979714,1486272454}   
+sudo_users = {SUDO,1486272454,1486272454}   
 print([[
 CH › @TEAMKAITO
 CH › @VAAVVVV
@@ -131,7 +131,7 @@ return false
 end 
 end
 function Can_or_NotCan(user_id,chat_id)
-if tonumber(user_id) == tonumber(1920979714) then  
+if tonumber(user_id) == tonumber(1486272454) then  
 var = true  
 elseif tonumber(user_id) == tonumber(1486272454) then
 var = true  
@@ -163,7 +163,7 @@ end
 return var
 end 
 function Rutba(user_id,chat_id)
-if tonumber(user_id) == tonumber(1920979714) then  
+if tonumber(user_id) == tonumber(1486272454) then  
 var = 'مطور السورس '
 elseif tonumber(user_id) == tonumber(1486272454) then
 var = 'مبرمج السورس'
@@ -2733,7 +2733,7 @@ if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or tex
 Text = "𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙆𝘼𝙄𝙏𝙊 \n\n[𝙏𝙀𝘼𝙈 𝙆𝘼𝙄𝙏𝙊 ⁦ ](http://t.me/VAAVVVV)\n\n[𝙐𝙋𝘿𝘼𝙏𝙀 𝙆𝘼𝙄𝙏𝙊 ](https://t.me/TEAMKAITO)\n\n[𝑻𝑾 𝑲𝑨𝑰𝑻𝑶](http://t.me/PLJBOT)"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝑫𝑬𝑽 𝑲𝑨𝑰𝑻𝑶',url="https://t.me/TTITITl"}},
+{{text = '𝑫𝑬𝑽 𝑲𝑨𝑰𝑻𝑶',url="https://t.me/T_TIMO"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
